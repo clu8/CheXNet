@@ -26,15 +26,18 @@ class CXRDataset(torch.utils.data.Dataset):
     
     def __getitem__(self, idx):
         img_file = self.img_files[idx]
-        #print(img_file)
         img_path = os.path.join(self.img_dir, img_file)
-        img = Image.open(img_path)
+        img = Image.open(img_path).convert('RGB')
         if self.transform:
             img = self.transform(img)
             
         return img, self.img_to_labels[img_file]
 
 class PneumoniaDataset(CXRDataset):
+    def __init__(self, img_dir, data_csv, transform=None):
+        super(PneumoniaDataset, self).__init__(img_dir, data_csv, transform)
+        self.labels = [int('Pneumonia' in self.img_to_labels[img_file]) for img_file in self.img_files]
+    
     def __getitem__(self, idx):
-        img, labels = super(PneumoniaDataset, self).__getitem__(idx)
-        return img, int('Pneumonia' in labels)
+        img, _ = super(PneumoniaDataset, self).__getitem__(idx)
+        return img, torch.FloatTensor([self.labels[idx]])
