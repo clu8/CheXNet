@@ -6,7 +6,11 @@ import torch
 
 
 class CXRDataset(torch.utils.data.Dataset):
-    def __init__(self, img_dir, data_csv, transform=None):
+    def __init__(self, img_dir, data_csv, transform=None, patient_filter=None):
+        '''
+        patient_filter: A function which receives the patient ID as input and returns whether an image should be included in the dataset. 
+                        Useful for splitting train into train/val.
+        '''
         self.transform = transform
         
         self.img_dir = img_dir
@@ -20,6 +24,10 @@ class CXRDataset(torch.utils.data.Dataset):
             else:
                 labels = set(labels_str.split('|'))
             self.img_to_labels[img_file] = labels
+
+        if patient_filter is not None:
+            img_to_patient = {img_file: patient_id for img_file, patient_id in zip(df['Image Index'], df['Patient ID'])}
+            self.img_files = [img_file for img_file in self.img_files if patient_filter(img_to_patient[img_file])]
             
     def __len__(self):
         return len(self.img_files)
@@ -28,14 +36,14 @@ class CXRDataset(torch.utils.data.Dataset):
         img_file = self.img_files[idx]
         img_path = os.path.join(self.img_dir, img_file)
         img = Image.open(img_path).convert('RGB')
-        if self.transform:
+        if self.transform is not None:
             img = self.transform(img)
             
         return img, self.img_to_labels[img_file]
 
 class PneumoniaDataset(CXRDataset):
-    def __init__(self, img_dir, data_csv, transform=None):
-        super(PneumoniaDataset, self).__init__(img_dir, data_csv, transform)
+    def __init__(self, *args):
+        super(PneumoniaDataset, self).__init__(*args)
         self.labels = [int('Pneumonia' in self.img_to_labels[img_file]) for img_file in self.img_files]
     
     def __getitem__(self, idx):
