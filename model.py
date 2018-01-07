@@ -8,8 +8,6 @@ class PneumoniaNet(nn.Module):
         super(PneumoniaNet, self).__init__()
         
         self.densenet = models.densenet161(pretrained=True)
-        for param in self.densenet.parameters():
-            param.requires_grad = False
         
         num_features = self.densenet.classifier.in_features
         self.densenet.classifier = nn.Linear(num_features, 1)
@@ -18,7 +16,7 @@ class PneumoniaNet(nn.Module):
         if self.use_gpu:
             self.densenet = self.densenet.cuda()
         
-        self.optimizer = torch.optim.Adam(self.densenet.classifier.parameters())
+        self.optimizer = torch.optim.Adam(self.densenet.parameters())
         self.loss_fn = nn.BCEWithLogitsLoss()
         
     def forward(self, img):
