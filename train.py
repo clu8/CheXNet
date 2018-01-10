@@ -1,7 +1,7 @@
 import os
 import time
 
-from sklearn.metrics import confusion_matrix
+from sklearn.metrics import average_precision_score, confusion_matrix, roc_auc_score
 import torch
 from torch.autograd import Variable
 import torchvision.transforms as transforms
@@ -26,14 +26,15 @@ def train_epoch(model, epoch):
 def evaluate(model):
     start = time.time()
     print('=============== Evaluating ===============')
+    all_logits = []
     all_preds = []
     all_labels = []
     for i, (img, label) in enumerate(val_loader):
         img = make_var(img, volatile=True)
-        logits = model(img)
-        pred = model(img) > 0
-        pred = pred.data.cpu().numpy()
+        logits = model(img).data.cpu().numpy()
+        pred = logits > 0
         
+        all_logits.extend(list(logits))
         all_preds.extend(list(pred))
         all_labels.extend(list(label))
     
@@ -45,6 +46,9 @@ def evaluate(model):
     recall = tp / (tp + fn)
     print(f'Recall: {tp} / {tp + fn} = {recall:.2f}')
     print(f'Elapsed: {time.time() - start}')
+
+    print(f'Average precision score: {average_precision_score(all_labels, all_logits)}')
+    print(f'AUROC: {roc_auc_score(all_labels, all_logits)}')
     
 
 normalize = transforms.Normalize(
@@ -54,6 +58,7 @@ normalize = transforms.Normalize(
 
 transform = transforms.Compose([
     transforms.Resize(224),
+    transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
     normalize
 ])
