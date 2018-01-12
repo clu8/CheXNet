@@ -45,10 +45,11 @@ def evaluate(model):
     print(f'Precision: {tp} / {tp + fp} = {precision:.2f}')
     recall = tp / (tp + fn)
     print(f'Recall: {tp} / {tp + fn} = {recall:.2f}')
-    print(f'Elapsed: {time.time() - start}')
 
     print(f'Average precision score: {average_precision_score(all_labels, all_logits)}')
     print(f'AUROC: {roc_auc_score(all_labels, all_logits)}')
+
+    print(f'Elapsed: {time.time() - start}')
     
 
 normalize = transforms.Normalize(
@@ -101,6 +102,6 @@ val_loader = torch.utils.data.DataLoader(
 model = PneumoniaNet(config.use_gpu)
 
 evaluate(model)
-for epoch in range(10):
+for epoch in range(config.num_epochs):
     train_epoch(model, epoch)
     evaluate(model)
