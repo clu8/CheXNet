@@ -23,13 +23,13 @@ def train_epoch(model, epoch):
         print(f'Epoch {epoch}, batch {i}: {loss.data[0]}')
     print(f'Elapsed: {time.time() - start}')
 
-def evaluate(model):
+def evaluate(model, loader):
     start = time.time()
     print('=============== Evaluating ===============')
     all_logits = []
     all_preds = []
     all_labels = []
-    for i, (img, label) in enumerate(val_loader):
+    for i, (img, label) in enumerate(loader):
         img = make_var(img, volatile=True)
         logits = model(img).data.cpu().numpy()
         pred = logits > 0
@@ -99,9 +99,21 @@ val_loader = torch.utils.data.DataLoader(
     pin_memory=True
 )
 
+test_loader = torch.utils.data.DataLoader(
+    test_dset,
+    batch_size=config.val_batch_size,
+    shuffle=False,
+    num_workers=config.workers,
+    pin_memory=True
+)
+
 model = PneumoniaNet(config.use_gpu)
 
-evaluate(model)
+evaluate(model, val_loader)
 for epoch in range(config.num_epochs):
     train_epoch(model, epoch)
-    evaluate(model)
+    evaluate(model, val_loader)
+
+print('================= Test set ==================')
+evaluate(model, test_loader)
+
