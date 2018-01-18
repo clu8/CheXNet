@@ -4,7 +4,7 @@ import torchvision.models as models
 
 
 class PneumoniaNet(nn.Module):
-    def __init__(self, use_gpu):
+    def __init__(self, use_gpu, verbose=False):
         super(PneumoniaNet, self).__init__()
         
         self.densenet = models.densenet161(pretrained=True)
@@ -17,6 +17,8 @@ class PneumoniaNet(nn.Module):
             self.densenet = self.densenet.cuda()
         
         self.optimizer = torch.optim.Adam(self.densenet.parameters())
+        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', factor=0.1, patience=1, verbose=verbose)
+
         self.loss_fn = nn.BCEWithLogitsLoss()
         
     def forward(self, img):

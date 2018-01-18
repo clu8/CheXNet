@@ -12,5 +12,5 @@ workers = 4
 
 num_epochs = 50
 train_batch_size = 16
-val_batch_size = 32
+val_batch_size = 16
 
