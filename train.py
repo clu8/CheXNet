@@ -15,9 +15,8 @@ from model import PneumoniaNet
 def make_var(x, volatile=False):
     return Variable(x.cuda(), volatile) if config.use_gpu else Variable(x, volatile)
 
-def train_epoch(model, epoch):
+def train_epoch(model):
     start = time.time()
-    print(f'=============== Training epoch {epoch} ===============')
     all_losses = []
     for i, (img, label) in enumerate(train_loader):
         img, label = make_var(img), make_var(label)
@@ -31,7 +30,6 @@ def train_epoch(model, epoch):
 
 def evaluate(model, loader):
     start = time.time()
-    print('=============== Evaluating ===============')
     all_logits = []
     all_labels = []
     all_losses = []
@@ -109,12 +107,20 @@ test_loader = torch.utils.data.DataLoader(
 
 model = PneumoniaNet(config.use_gpu, verbose=True)
 
-evaluate(model, val_loader)
+best_val_loss = evaluate(model, val_loader)
 for epoch in range(config.num_epochs):
-    train_epoch(model, epoch)
+    print(f'=============== Training epoch {epoch} ===============')
+    train_epoch(model)
+    print('=============== Evaluating on validation set ===============')
     val_loss = evaluate(model, val_loader)
+    if val_loss < best_val_loss:
+        torch.save(model.state_dict(), config.model_path)
+        best_val_loss = val_loss
+        print(f'New best validation loss! Saved model params to {config.model_path}')
     model.scheduler.step(val_loss)
 
-print('================= Test set ==================')
+print('================= Evaluating on test set ==================')
+model.load_state_dict(config.model_path)
+print(f'Loaded model params from {config.model_path}')
 evaluate(model, test_loader)
 
