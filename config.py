@@ -7,6 +7,8 @@ train_path = os.path.join(data_path, 'images_train')
 test_path = os.path.join(data_path, 'images_test')
 val_proportion = 10
 
+model_path = 'model.pkl'
+
 use_gpu = True
 workers = 4
 
