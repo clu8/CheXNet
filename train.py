@@ -120,7 +120,7 @@ for epoch in range(config.num_epochs):
     model.scheduler.step(val_loss)
 
 print('================= Evaluating on test set ==================')
-model.load_state_dict(config.model_path)
+model.load_state_dict(torch.load(config.model_path))
 print(f'Loaded model params from {config.model_path}')
 evaluate(model, test_loader)
 

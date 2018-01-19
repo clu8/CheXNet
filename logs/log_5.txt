@@ -1,0 +1,411 @@
+Average precision score: 0.010656687214327408
+AUROC: 0.49223120880676213
+Validation loss (approximate): 0.7107729977913108
+Elapsed: 69.68190550804138
+=============== Training epoch 0 ===============
+Train loss (approximate): 0.6737011698595027
+Elapsed: 861.1962831020355
+=============== Evaluating on validation set ===============
+Average precision score: 0.01785387762344851
+AUROC: 0.685307138414723
+Validation loss (approximate): 0.6354597973269086
+Elapsed: 68.88542366027832
+New best validation loss! Saved model params to model.pkl
+=============== Training epoch 1 ===============
+Train loss (approximate): 0.6426686032592636
+Elapsed: 863.1300404071808
+=============== Evaluating on validation set ===============
+Average precision score: 0.017497652149512308
+AUROC: 0.647363428638308
+Validation loss (approximate): 0.8303869941366806
+Elapsed: 69.61975979804993
+=============== Training epoch 2 ===============
+Train loss (approximate): 0.5711324229652119
+Elapsed: 861.8870377540588
+=============== Evaluating on validation set ===============
+Average precision score: 0.015883106827809995
+AUROC: 0.6238222969818957
+Validation loss (approximate): 0.7396937690821871
+Elapsed: 69.84856104850769
+Epoch     2: reducing learning rate of group 0 to 1.0000e-04.
+=============== Training epoch 3 ===============
+Train loss (approximate): 0.4085582334310124
+Elapsed: 860.6800196170807
+=============== Evaluating on validation set ===============
+Average precision score: 0.012726981088097002
+AUROC: 0.6038168260980215
+Validation loss (approximate): 0.9751495981259082
+Elapsed: 70.0251612663269
+=============== Training epoch 4 ===============
+Train loss (approximate): 0.3222869267921472
+Elapsed: 864.6960985660553
+=============== Evaluating on validation set ===============
+Average precision score: 0.014175980384818099
+AUROC: 0.6116693136490386
+Validation loss (approximate): 1.0384407976445658
+Elapsed: 70.77191853523254
+Epoch     4: reducing learning rate of group 0 to 1.0000e-05.
+=============== Training epoch 5 ===============
+Train loss (approximate): 0.2722647715436736
+Elapsed: 864.1909067630768
+=============== Evaluating on validation set ===============
+Average precision score: 0.012094303468423103
+AUROC: 0.5849586077280998
+Validation loss (approximate): 0.9951889557574004
+Elapsed: 69.29623532295227
+=============== Training epoch 6 ===============
+Train loss (approximate): 0.2593972170391341
+Elapsed: 864.251796245575
+=============== Evaluating on validation set ===============
+Average precision score: 0.011935146217759249
+AUROC: 0.5741039386281147
+Validation loss (approximate): 1.0309750384422876
+Elapsed: 69.85575032234192
+Epoch     6: reducing learning rate of group 0 to 1.0000e-06.
+=============== Training epoch 7 ===============
+Train loss (approximate): 0.2509722476095422
+Elapsed: 863.0499069690704
+=============== Evaluating on validation set ===============
+Average precision score: 0.012230541032182582
+AUROC: 0.5739501550764222
+Validation loss (approximate): 1.01216675461085
+Elapsed: 69.7497923374176
+=============== Training epoch 8 ===============
+Train loss (approximate): 0.2487342648281111
+Elapsed: 859.6581599712372
+=============== Evaluating on validation set ===============
+Average precision score: 0.015453717556089885
+AUROC: 0.5932670022686477
+Validation loss (approximate): 1.009929717120203
+Elapsed: 69.82854151725769
+Epoch     8: reducing learning rate of group 0 to 1.0000e-07.
+=============== Training epoch 9 ===============
+Train loss (approximate): 0.24889694198428355
+Elapsed: 864.9270431995392
+=============== Evaluating on validation set ===============
+Average precision score: 0.012315575244491664
+AUROC: 0.5746646361794178
+Validation loss (approximate): 1.008253773124572
+Elapsed: 69.65463733673096
+=============== Training epoch 10 ===============
+Train loss (approximate): 0.2507844824678044
+Elapsed: 864.3787996768951
+=============== Evaluating on validation set ===============
+Average precision score: 0.013108854438733802
+AUROC: 0.5789025298074713
+Validation loss (approximate): 1.0133771793466988
+Elapsed: 70.88338947296143
+Epoch    10: reducing learning rate of group 0 to 1.0000e-08.
+=============== Training epoch 11 ===============
+Train loss (approximate): 0.24817107138982447
+Elapsed: 863.6668193340302
+=============== Evaluating on validation set ===============
+Average precision score: 0.012430803712220436
+AUROC: 0.5934439213989131
+Validation loss (approximate): 1.0139171172979693
+Elapsed: 70.49978995323181
+=============== Training epoch 12 ===============
+Train loss (approximate): 0.2521847649452459
+Elapsed: 862.852029800415
+=============== Evaluating on validation set ===============
+Average precision score: 0.026311151860048013
+AUROC: 0.5904335743516254
+Validation loss (approximate): 1.0139232385030585
+Elapsed: 70.37580800056458
+=============== Training epoch 13 ===============
+Train loss (approximate): 0.2491576423634266
+Elapsed: 862.9838635921478
+=============== Evaluating on validation set ===============
+Average precision score: 0.01563557657014409
+AUROC: 0.5903573630339726
+Validation loss (approximate): 1.0134928917415666
+Elapsed: 70.56401681900024
+=============== Training epoch 14 ===============
+Train loss (approximate): 0.24921511976182767
+Elapsed: 863.1996250152588
+=============== Evaluating on validation set ===============
+Average precision score: 0.01991083520102229
+AUROC: 0.6190237058025393
+Validation loss (approximate): 1.0111842209303314
+Elapsed: 70.20494294166565
+=============== Training epoch 15 ===============
+Train loss (approximate): 0.24686074414127265
+Elapsed: 862.2422614097595
+=============== Evaluating on validation set ===============
+Average precision score: 0.013495115981895149
+AUROC: 0.5879580674442942
+Validation loss (approximate): 1.0148819978207297
+Elapsed: 70.67513418197632
+=============== Training epoch 16 ===============
+Train loss (approximate): 0.24889198409028582
+Elapsed: 865.1757781505585
+=============== Evaluating on validation set ===============
+Average precision score: 0.020716410373515043
+AUROC: 0.5998021227573799
+Validation loss (approximate): 1.0097251916187606
+Elapsed: 71.17568612098694
+=============== Training epoch 17 ===============
+Train loss (approximate): 0.24916027050926207
+Elapsed: 867.096093416214
+=============== Evaluating on validation set ===============
+Average precision score: 0.01571940212716578
+AUROC: 0.6007520423952672
+Validation loss (approximate): 1.0089096294212854
+Elapsed: 71.91485381126404
+=============== Training epoch 18 ===============
+Train loss (approximate): 0.24594502144099512
+Elapsed: 865.6765594482422
+=============== Evaluating on validation set ===============
+Average precision score: 0.013075391226827205
+AUROC: 0.5909316697491422
+Validation loss (approximate): 1.021493378393552
+Elapsed: 71.53477334976196
+=============== Training epoch 19 ===============
+Train loss (approximate): 0.24756636328687986
+Elapsed: 863.5812737941742
+=============== Evaluating on validation set ===============
+Average precision score: 0.013167094072289519
+AUROC: 0.5922367885639475
+Validation loss (approximate): 1.0212722412162263
+Elapsed: 70.95633363723755
+=============== Training epoch 20 ===============
+Train loss (approximate): 0.24784090887678345
+Elapsed: 865.3236830234528
+=============== Evaluating on validation set ===============
+Average precision score: 0.016044454055347566
+AUROC: 0.6067945111520293
+Validation loss (approximate): 1.0136250739447332
+Elapsed: 70.95455050468445
+=============== Training epoch 21 ===============
+Train loss (approximate): 0.2496757681333681
+Elapsed: 866.708039522171
+=============== Evaluating on validation set ===============
+Average precision score: 0.012998686689486456
+AUROC: 0.5938930238065102
+Validation loss (approximate): 1.0154366563599098
+Elapsed: 71.77820754051208
+=============== Training epoch 22 ===============
+Train loss (approximate): 0.25326755837374126
+Elapsed: 867.2083411216736
+=============== Evaluating on validation set ===============
+Average precision score: 0.016794759004373147
+AUROC: 0.5932710850178076
+Validation loss (approximate): 1.0134962264561695
+Elapsed: 72.10170125961304
+=============== Training epoch 23 ===============
+Train loss (approximate): 0.24608505191915123
+Elapsed: 866.3374786376953
+=============== Evaluating on validation set ===============
+Average precision score: 0.012668790408489955
+AUROC: 0.5793597977133883
+Validation loss (approximate): 1.0106176215762102
+Elapsed: 70.56212091445923
+=============== Training epoch 24 ===============
+Train loss (approximate): 0.24821063545791758
+Elapsed: 865.3658168315887
+=============== Evaluating on validation set ===============
+Average precision score: 0.017139826568795084
+AUROC: 0.5986385392467872
+Validation loss (approximate): 1.0149454405141431
+Elapsed: 70.98168087005615
+=============== Training epoch 25 ===============
+Train loss (approximate): 0.24905165208599617
+Elapsed: 864.84135389328
+=============== Evaluating on validation set ===============
+Average precision score: 0.013631974866519816
+AUROC: 0.5860514235865862
+Validation loss (approximate): 1.0191153978832292
+Elapsed: 71.0156798362732
+=============== Training epoch 26 ===============
+Train loss (approximate): 0.2494875391073448
+Elapsed: 862.0539748668671
+=============== Evaluating on validation set ===============
+Average precision score: 0.014800196548662919
+AUROC: 0.5931567680413284
+Validation loss (approximate): 1.0143729134834303
+Elapsed: 69.84264993667603
+=============== Training epoch 27 ===============
+Train loss (approximate): 0.24583286073673324
+Elapsed: 861.5216293334961
+=============== Evaluating on validation set ===============
+Average precision score: 0.01628853287646275
+AUROC: 0.5992373424569168
+Validation loss (approximate): 1.0143190924618026
+Elapsed: 70.54637503623962
+=============== Training epoch 28 ===============
+Train loss (approximate): 0.2469057714159495
+Elapsed: 861.5433444976807
+=============== Evaluating on validation set ===============
+Average precision score: 0.013648107812152758
+AUROC: 0.5978219894147924
+Validation loss (approximate): 1.0224430235852495
+Elapsed: 69.71802568435669
+=============== Training epoch 29 ===============
+Train loss (approximate): 0.24741739808937016
+Elapsed: 861.9101786613464
+=============== Evaluating on validation set ===============
+Average precision score: 0.015510634576561787
+AUROC: 0.6067945111520293
+Validation loss (approximate): 1.0097559507076557
+Elapsed: 69.7503354549408
+=============== Training epoch 30 ===============
+Train loss (approximate): 0.24916478980409423
+Elapsed: 859.6634390354156
+=============== Evaluating on validation set ===============
+Average precision score: 0.011763240908736868
+AUROC: 0.5763766689938337
+Validation loss (approximate): 1.0160901166885186
+Elapsed: 70.63312363624573
+=============== Training epoch 31 ===============
+Train loss (approximate): 0.24775328462924232
+Elapsed: 859.808750629425
+=============== Evaluating on validation set ===============
+Average precision score: 0.012170203902185182
+AUROC: 0.5837854978028005
+Validation loss (approximate): 1.0185114810633105
+Elapsed: 69.61159658432007
+=============== Training epoch 32 ===============
+Train loss (approximate): 0.25338649024706833
+Elapsed: 859.1840810775757
+=============== Evaluating on validation set ===============
+Average precision score: 0.01651629992370403
+AUROC: 0.6359453401542463
+Validation loss (approximate): 1.0139736340169616
+Elapsed: 69.31230807304382
+=============== Training epoch 33 ===============
+Train loss (approximate): 0.24924188270319983
+Elapsed: 860.1328506469727
+=============== Evaluating on validation set ===============
+Average precision score: 0.01595103981786286
+AUROC: 0.6039624441513938
+Validation loss (approximate): 1.0096451459929001
+Elapsed: 69.71335291862488
+=============== Training epoch 34 ===============
+Train loss (approximate): 0.2464863591406917
+Elapsed: 862.0247094631195
+=============== Evaluating on validation set ===============
+Average precision score: 0.014401616334535754
+AUROC: 0.6184997529936758
+Validation loss (approximate): 1.0093046850616476
+Elapsed: 70.47183346748352
+=============== Training epoch 35 ===============
+Train loss (approximate): 0.24961295002552958
+Elapsed: 861.7872824668884
+=============== Evaluating on validation set ===============
+Average precision score: 0.013145761529746622
+AUROC: 0.5845340018154624
+Validation loss (approximate): 1.007006704434086
+Elapsed: 71.00934386253357
+=============== Training epoch 36 ===============
+Train loss (approximate): 0.25108259231543417
+Elapsed: 861.8488290309906
+=============== Evaluating on validation set ===============
+Average precision score: 0.012245493874038983
+AUROC: 0.5865726545626763
+Validation loss (approximate): 1.006400154613638
+Elapsed: 70.27913022041321
+=============== Training epoch 37 ===============
+Train loss (approximate): 0.25146389084877735
+Elapsed: 863.8218171596527
+=============== Evaluating on validation set ===============
+Average precision score: 0.013870021697436404
+AUROC: 0.6153859763010021
+Validation loss (approximate): 1.0073221036914424
+Elapsed: 69.27311205863953
+=============== Training epoch 38 ===============
+Train loss (approximate): 0.2480281989618214
+Elapsed: 861.9711933135986
+=============== Evaluating on validation set ===============
+Average precision score: 0.017561785439966775
+AUROC: 0.6108051317435108
+Validation loss (approximate): 1.0057291529259655
+Elapsed: 69.57619833946228
+=============== Training epoch 39 ===============
+Train loss (approximate): 0.2516138309466931
+Elapsed: 862.0265603065491
+=============== Evaluating on validation set ===============
+Average precision score: 0.014611892560884665
+AUROC: 0.5960228579516302
+Validation loss (approximate): 1.0049844932257597
+Elapsed: 69.74641036987305
+=============== Training epoch 40 ===============
+Train loss (approximate): 0.25143195657578016
+Elapsed: 859.6054382324219
+=============== Evaluating on validation set ===============
+Average precision score: 0.011933904476687046
+AUROC: 0.5779036171796641
+Validation loss (approximate): 1.0159298097298268
+Elapsed: 70.33065104484558
+=============== Training epoch 41 ===============
+Train loss (approximate): 0.24736848531041256
+Elapsed: 859.7697052955627
+=============== Evaluating on validation set ===============
+Average precision score: 0.015769512310342466
+AUROC: 0.5943149078863743
+Validation loss (approximate): 1.0175089462925155
+Elapsed: 69.91399788856506
+=============== Training epoch 42 ===============
+Train loss (approximate): 0.2455725660804928
+Elapsed: 863.3371138572693
+=============== Evaluating on validation set ===============
+Average precision score: 0.014170112456783854
+AUROC: 0.5858200678008543
+Validation loss (approximate): 1.0195684083245948
+Elapsed: 70.32921051979065
+=============== Training epoch 43 ===============
+Train loss (approximate): 0.2480395751185331
+Elapsed: 865.3777070045471
+=============== Evaluating on validation set ===============
+Average precision score: 0.013542825570428848
+AUROC: 0.6014842154112894
+Validation loss (approximate): 1.020974893369487
+Elapsed: 71.02962017059326
+=============== Training epoch 44 ===============
+Train loss (approximate): 0.2501244586733045
+Elapsed: 864.462061882019
+=============== Evaluating on validation set ===============
+Average precision score: 0.015181599343407626
+AUROC: 0.5786534821087127
+Validation loss (approximate): 1.0158237973777893
+Elapsed: 71.05298089981079
+=============== Training epoch 45 ===============
+Train loss (approximate): 0.24765928519832106
+Elapsed: 863.9550549983978
+=============== Evaluating on validation set ===============
+Average precision score: 0.01316231386418906
+AUROC: 0.608435776314339
+Validation loss (approximate): 1.0156280936836557
+Elapsed: 70.67955088615417
+=============== Training epoch 46 ===============
+Train loss (approximate): 0.24896277131570368
+Elapsed: 863.0470290184021
+=============== Evaluating on validation set ===============
+Average precision score: 0.012909290596885068
+AUROC: 0.5926668381421314
+Validation loss (approximate): 1.0167506460853468
+Elapsed: 71.31611943244934
+=============== Training epoch 47 ===============
+Train loss (approximate): 0.24545447702298767
+Elapsed: 860.1925768852234
+=============== Evaluating on validation set ===============
+Average precision score: 0.013281467123760254
+AUROC: 0.6062283699351796
+Validation loss (approximate): 1.0180567357962376
+Elapsed: 69.65132188796997
+=============== Training epoch 48 ===============
+Train loss (approximate): 0.2502450695030929
+Elapsed: 859.8550689220428
+=============== Evaluating on validation set ===============
+Average precision score: 0.01823854196069448
+AUROC: 0.6312039074631294
+Validation loss (approximate): 1.0097121914085634
+Elapsed: 69.35864353179932
+=============== Training epoch 49 ===============
+Train loss (approximate): 0.2527264055002903
+Elapsed: 859.6355373859406
+=============== Evaluating on validation set ===============
+Average precision score: 0.013660922030973143
+AUROC: 0.5990699497413579
+Validation loss (approximate): 1.0106946019878968
+Elapsed: 69.78830647468567
+================= Evaluating on test set ==================
