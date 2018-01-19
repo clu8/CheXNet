@@ -36,7 +36,7 @@ def evaluate(model, loader):
     for i, (img, label) in enumerate(loader):
         img, label_var = make_var(img, volatile=True), make_var(label, volatile=True)
         logit = model(img)
-        loss = model.loss_fn(logit, label_var)
+        loss = model.loss(logit, label_var)
         
         all_logits.extend(list(logit.data.cpu().numpy()))
         all_labels.extend(list(label))
@@ -72,19 +72,13 @@ val_dset = PneumoniaDataset(
 )
 test_dset = PneumoniaDataset(config.test_path, os.path.join(config.data_path, 'Data_Entry_2017.csv'), transform)
 
-num_positive = sum(train_dset.labels)
-num_negative = len(train_dset) - num_positive
-
-label_to_weight = lambda l: 1 if l == 1 else num_positive / num_negative
-sampler = torch.utils.data.sampler.WeightedRandomSampler(
-    weights=[label_to_weight(label) for label in train_dset.labels],
-    num_samples=len(train_dset)
-)
+num_pos = sum(train_dset.labels)
+num_neg = len(train_dset) - num_pos
 
 train_loader = torch.utils.data.DataLoader(
     train_dset,
     batch_size=config.train_batch_size,
-    sampler=sampler,
+    shuffle=True,
     num_workers=config.workers,
     pin_memory=True
 )
@@ -105,22 +99,23 @@ test_loader = torch.utils.data.DataLoader(
     pin_memory=True
 )
 
-model = PneumoniaNet(config.use_gpu, verbose=True)
+model = PneumoniaNet(config.use_gpu, class_counts=(num_pos, num_neg), verbose=True)
 
-best_val_loss = evaluate(model, val_loader)
-for epoch in range(config.num_epochs):
-    print(f'=============== Training epoch {epoch} ===============')
-    train_epoch(model)
-    print('=============== Evaluating on validation set ===============')
-    val_loss = evaluate(model, val_loader)
-    if val_loss < best_val_loss:
-        torch.save(model.state_dict(), config.model_path)
-        best_val_loss = val_loss
-        print(f'New best validation loss! Saved model params to {config.model_path}')
-    model.scheduler.step(val_loss)
+if __name__ == '__main__':
+    best_val_loss = evaluate(model, val_loader)
+    for epoch in range(config.num_epochs):
+        print(f'=============== Training epoch {epoch} ===============')
+        train_epoch(model)
+        print('=============== Evaluating on validation set ===============')
+        val_loss = evaluate(model, val_loader)
+        if val_loss < best_val_loss:
+            torch.save(model.state_dict(), config.model_path)
+            best_val_loss = val_loss
+            print(f'New best validation loss! Saved model params to {config.model_path}')
+        model.scheduler.step(val_loss)
 
-print('================= Evaluating on test set ==================')
-model.load_state_dict(torch.load(config.model_path))
-print(f'Loaded model params from {config.model_path}')
-evaluate(model, test_loader)
+    print('================= Evaluating on test set ==================')
+    model.load_state_dict(torch.load(config.model_path))
+    print(f'Loaded model params from {config.model_path}')
+    evaluate(model, test_loader)
 

@@ -5,7 +5,7 @@ data_path = '/home/ubuntu/efs/CXR8'
 all_img_path = os.path.join(data_path, 'images')
 train_path = os.path.join(data_path, 'images_train')
 test_path = os.path.join(data_path, 'images_test')
-val_proportion = 10
+val_proportion = 8 # 70% train, 10% val
 
 model_path = 'model.pkl'
 
