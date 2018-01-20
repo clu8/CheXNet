@@ -12,7 +12,7 @@ model_path = 'model.pkl'
 use_gpu = True
 workers = 4
 
-num_epochs = 50
+num_epochs = 40
 train_batch_size = 16
 val_batch_size = 16
 

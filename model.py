@@ -22,7 +22,7 @@ class PneumoniaNet(nn.Module):
             self.densenet = self.densenet.cuda()
         
         self.optimizer = torch.optim.Adam(self.densenet.parameters())
-        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', factor=0.1, patience=1, verbose=verbose)
+        self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(self.optimizer, mode='min', factor=0.5, patience=2, verbose=verbose)
 
         self.num_pos, self.num_neg = class_counts
         self.num_total = self.num_pos + self.num_neg
